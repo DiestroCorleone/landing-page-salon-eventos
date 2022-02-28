@@ -1,0 +1,458 @@
+/*Import your fonts here*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	transition: all 200ms;
+}
+
+html{
+	height: 100%;
+	scroll-behavior: smooth;
+}
+
+body{
+	display: grid;
+/*Define template areas and rows*/
+	grid-template-areas:
+		"header"
+		"main"
+		"list"
+		"aside"
+		"numbers"
+		"gallery"
+		"footer";
+	grid-template-rows: minmax(100vh, 100vh) repeat(3, auto) minmax(50vh, 50vh) repeat(2, auto);
+/*End template areas and rows*/	
+	min-height: 100%;
+/*Define main font*/	
+	font-family: 'Poppins', sans-serif;	
+}
+
+/*General styling*/
+
+a{
+	text-decoration: none;
+}
+
+h1{
+  font-size: 4rem;
+}
+
+h2{
+  font-size: 3rem;
+}
+
+h3{
+  font-size: 2rem;
+}
+
+button{
+	border: none;
+	padding: 1rem;
+}
+
+a, button{
+	cursor: pointer;
+}
+
+img:hover{
+	opacity: 0.8;
+}
+
+/*---------Classes start---------*/
+/*Display*/
+
+.grid-center{
+	display: grid;
+	align-items: center;
+}
+
+.flex{
+	display: flex;
+}
+
+.flex-row{
+	flex-direction: row;
+}
+
+.flex-column{
+	flex-direction: column;
+}
+
+/*Justify*/
+
+.between{	
+	justify-content: space-between;
+}
+
+.around{
+	justify-content: space-around;
+}
+
+/*Grid system*/
+
+.col-quarter{
+	width: 25%;
+}
+
+.col-3-quarter{
+	width: 75%;
+}
+
+.col-third{
+	width: 33%;
+}
+
+.col-2-third{
+	width: 66%;
+}
+
+.col-half{
+	width: 50%;
+}
+
+/*Text align*/
+
+.text-center{
+	text-align: center;
+}
+
+.text-left{
+	text-align: left;
+}
+
+.text-right{
+	text-align: right;
+}
+
+/*Basic colors*/
+.color-white{
+	color: white;
+}
+
+.color-black{
+	color: black;
+}
+
+.back-white{
+	background-color: white;
+}
+
+.back-black{
+	background-color: black;
+}
+
+.hover-color-black:hover{
+	color: black;
+}
+
+.hover-color-white:hover{
+	color: white;
+}
+
+.hover-back-black:hover{
+	background-color: black;
+}
+
+.hover-back-white:hover{
+	background-color: white;
+}
+
+/*Images*/
+
+.img-responsive{
+	width: 100%;
+	height: auto;
+}
+
+.img-sm{
+	width: 3rem;
+	height: auto;
+}
+
+.img-md{
+	width: 10rem;
+	height: auto;
+}
+
+.contain{
+	object-fit: contain;
+}
+
+.cover{
+	object-fit: cover;
+}
+
+.fill{
+	object-fit: fill;
+}
+
+/*Margin and Padding*/
+
+.margin-sm{
+	margin: 1rem;
+}
+
+.margin-md{
+	margin: 2rem;
+}
+
+.no-margin{
+	margin: 0 auto;
+}
+
+.padded{
+	padding: 1rem;
+}
+
+.padded-hard{
+	padding: 3rem;
+}
+
+/*Heights*/
+
+.half-height{
+	height: 50%
+}
+
+.third-height{
+	height: 30%;
+}
+
+.auto-height{
+	height: auto;
+}
+
+.full-height{
+	height: 100%;
+}
+
+/*Text*/
+
+.font-bold{
+	font-weight: bold;
+}
+
+.text-shadow{
+	text-shadow: 1px 1px 5px black;
+}
+
+/*Rounded*/
+
+.rounded-soft{
+	border-radius: 10px;
+}
+
+.rounded-hard{
+	border-radius: 50px;
+}
+
+/*Misc*/
+
+.parallax{
+	width: 100;
+	height: auto;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.box-shadow{
+	box-shadow: 1px 1px 5px black;
+}
+
+.box-shadow:hover{
+	box-shadow: 1px 1px 20px black;
+}
+
+.over-hidden{
+	overflow: hidden;
+}
+
+/*Responsiveness and Visibility*/
+
+.show-on-phone{
+	display: none;
+}
+
+.invisible{
+	display: none;
+}
+
+/*---------Classes end---------*/
+
+
+/*Responsive nav start*/
+nav{
+	grid-area: nav;
+}
+
+nav ul{
+	display: flex;
+	justify-content: space-between;
+	list-style-type: none;
+}	
+
+nav li:first-of-type, nav li:nth-child(2){
+	display: none; 
+}
+
+nav li{
+	padding: 1.5rem;
+}
+
+/*Select Manually*/
+
+nav li:hover,nav li:hover a{
+	color: inherit;
+}
+
+nav li:hover{
+	background-color: gold;	
+}
+
+/*End Select Manually*/
+
+nav li:last-of-type:hover{
+	cursor: pointer;
+}
+/*Responsive nav end*/
+
+/*Float button*/
+
+.float-button{
+	position: fixed;
+	cursor: pointer;
+	z-index: 9999;
+	color: white;
+	bottom: 1rem;
+	right: 1rem;
+	transition: opacity 500ms;
+	width: 10%;
+	display: flex;
+	background-color: transparent;
+	border: none;
+	-webkit-filter: drop-shadow(1px 1px 10px #121213);
+	filter: drop-shadow(1px 1px 10px #121213);
+}
+
+.float-button:hover{
+	opacity: 0.8;
+}
+
+.float-button img{
+	float: left;
+	width: 100%;
+	height: auto;
+}
+
+.float-button div{
+	float: right;
+	padding: 1rem;
+}
+
+/*WRITE HERE YOUR GRID AREAS*/
+
+header{
+	grid-area: header;
+	background-image: linear-gradient(to right, #737373, #737373), url(img/head-back.jpg);
+	background-blend-mode: multiply;
+}
+
+main{
+	grid-area: main;
+}
+
+#list-of-stuff{
+	grid-area: list;
+}
+
+aside{
+	grid-area: aside;
+}
+
+#gallery{
+	grid-area: gallery;
+}
+
+#numbers{
+	grid-area: numbers;
+	background-image: linear-gradient(to right, #737373, #737373), url(img/bar-back.jpg);
+	background-blend-mode: multiply;
+}
+
+footer{
+	grid-area: footer;
+}
+
+/*END GRID AREAS*/
+
+@media screen and (max-width: 800px){
+	h1{
+		font-size: 2.5rem;
+	}
+
+	h2{
+		font-size: 2rem;	
+	}
+
+	h3{
+		font-size: 1.5rem;
+	}
+
+	nav ul, .flex-row{
+		flex-direction: column;
+	}
+
+	.padded-hard{
+		padding: 1rem;
+	}
+
+	.small-on-phone{
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.hide-on-phone{
+		display: none;
+	}
+
+	.show-on-phone{
+		display: block;
+	}
+
+	.col-quarter, .col-3-quarter, .col-third, .col-2-third, .col-half{
+		width: 100%;
+	}
+
+	.float-button{
+		width: 15%;
+	}
+
+	.margin-sm{
+		margin: 0 auto;
+	}
+
+	/*Acá comienza la magia*/
+	nav:not(:target) li:first-of-type{
+		display: inherit
+	}
+	
+	nav:not(:target) li{
+		display: none;
+	}
+	
+	nav:target li{
+		display: inherit;
+	}
+	
+	nav:target li:first-of-type{
+		display: none;
+	}
+	/*Acá termina la magia*/
+}	
